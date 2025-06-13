@@ -8,6 +8,7 @@ public class Test2 {
         System.out.println(2 + 4);
         System.out.println("1+4+1+5"
         );
+        System.out.println();
 
     }
 }

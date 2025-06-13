@@ -22,7 +22,7 @@ public class Example1 {
         System.out.println(z/v);
         // float , double 사용 후 변환시 3 < 작성하여도 자동적으로 3.0 < 처럼 소수점 적용
 
-        char ch1 = 'A'; //문자 지정시 char형은 문자 하나만 저장하고 ' < 만 사용한다.
+        char ch1 = 'A'; //문자 지정시 char은 문자 하나만 저장하고 ' < 만 사용한다.
         char ch2 = 'B';
         System.out.println(ch1);
 
@@ -44,10 +44,13 @@ public class Example1 {
         boolean bool = true; //true는 참을 의미하는 예약어 (키워드). 숫자로는 1을 뜻함
         System.out.println(bool);
         bool = false;
-        System.out.println(false); // fales 거짓의 의미이고 숫자로는 0을 뜻함.
+        System.out.println(false); // false 거짓의 의미이고 숫자로는 0을 뜻함.
 
         long tea = 10l;
         System.out.println(tea);
+        byte k;
+        k = 5;
+        System.out.println(k);
 
     }
 }
