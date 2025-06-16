@@ -8,7 +8,16 @@ public class Test2 {
         System.out.println(2 + 4);
         System.out.println("1+4+1+5"
         );
-        System.out.println();
+
+
+        int c = 130;
+        byte a = 3;
+        byte b = 5;
+        int d = a + b;
+
+        System.out.println((double)(3 / 2));
+
+
 
     }
 }
