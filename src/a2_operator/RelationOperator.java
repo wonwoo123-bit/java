@@ -12,7 +12,7 @@ public class RelationOperator {
         System.out.println();
 
 
-        // 변수를 이용한 비교연산ㄴ자 표현
+        // 변수를 이용한 비교연산자 표현
         int a = 5;
         int b = 2;
         int c = 5;

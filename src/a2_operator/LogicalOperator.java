@@ -34,7 +34,7 @@ public class LogicalOperator {
         System.out.println(false ^ false); // false
         System.out.println();
 
-        // 실제예시 1) NOT연산자의 사용법
+        // 실제예시 1) NOT 연산자의 사용법
         // 보통 토글장치를 구현할 때 사용함.
         boolean capsButton = false;
         capsButton = !capsButton;
@@ -56,5 +56,12 @@ public class LogicalOperator {
         // 00000111 = 7 < 키 값
         // 01000001 = 'A' < 복호화 성공
 
+//        ********쇼트서킷(short circuit)**********중요함
+//        AND 와 OR 논리연산자에 사용됨
+//        && (AND) < 첫번째 조건이 false일 경우면 두번째 조건은 실행하지 않음 => 무조건 false
+//        || (OR) < 첫번째 조건이 true면 두번째 조건을 계산하지 않음 => 무조건 true
+        int value1 = 3;
+        System.out.println(false && ++value1 > 6);
+//        두번째 조건 ++value1 >6 을 계산할 필요 없음. 결과는 무조건 false
     }
 }

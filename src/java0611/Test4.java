@@ -20,7 +20,10 @@ public class Test4 {
         char 이름 = 'a';
         System.out.println(이름);
         System.out.println((double) (3/2));
-
+        System.out.println();
+        System.out.println(2 + 3 /2);
+        System.out.println(10 % 3 + 5 / 3);
+        System.out.println((4 +5 /2) % 4);
 
 
     }
