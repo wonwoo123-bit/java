@@ -20,5 +20,6 @@ public class 연습 {
             System.out.println(a + " ");
             a++;
         }while (a < 0);
+
     }
 }
