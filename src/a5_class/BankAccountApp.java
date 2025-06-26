@@ -9,7 +9,7 @@ public class BankAccountApp {
             System.out.println("입금성공");
             System.out.println(bankObject);
         }
-        if (bankObject.deposit(0)){
+         bankObject.deposit2(0);{
             System.out.println("입금성공");
             System.out.println(bankObject);
         }

@@ -34,12 +34,12 @@ public class BankAccount {
             return true;
         }
     }
-    public double deposit2(double amount1){
+    public void deposit2(double amount1){
         if (amount1 <= 0){
             System.out.println("입금액에 오류가 있습니다.");
         }else {
             this.balance = this.balance + amount1;
-        }return amount1;
+        }
     }
 
    public boolean withdraw(double amount){
