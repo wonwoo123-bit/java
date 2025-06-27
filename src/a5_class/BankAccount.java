@@ -34,7 +34,7 @@ public class BankAccount {
             return true;
         }
     }
-    public void deposit2(double amount1){
+    public void deposit1(double amount1){
         if (amount1 <= 0){
             System.out.println("입금액에 오류가 있습니다.");
         }else {

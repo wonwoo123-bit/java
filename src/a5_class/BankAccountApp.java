@@ -9,10 +9,10 @@ public class BankAccountApp {
             System.out.println("입금성공");
             System.out.println(bankObject);
         }
-         bankObject.deposit2(0);{
-            System.out.println("입금성공");
-            System.out.println(bankObject);
-        }
+//         bankObject.deposit2(0);{
+//            System.out.println("입금성공");
+//            System.out.println(bankObject);
+//        }
 
         if (bankObject.withdraw(3000)){
             System.out.println("출금성공");
