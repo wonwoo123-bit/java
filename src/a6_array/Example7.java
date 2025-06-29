@@ -13,8 +13,15 @@ public class Example7 {
     }
     public static void calculate2DArray(int[][] arr) {
         int total = 0;
-        double average = 0;
-        
+        int count = 0;
+        for (int[] data : arr){
+            for (int value : data){
+                total = total + value;
+                count++;
+            }
+        }
+//        total =
+        double average = (double) total/count;
         // 여기에 코드를 작성하여 2차원 배열의 합과 평균을 계산하고
         // total과 average에 각각 입력하여 아래 코드로 출력되게 하세요
         

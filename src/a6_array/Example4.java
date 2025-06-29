@@ -9,9 +9,10 @@ public class Example4 {
         System.out.println(getMax(numbers2)); // 99
     }
     public static int getMax(int[] numbers) {
-        int max = 0;
-        for (int num : numbers){
-            if (num > max){
+        int max = numbers[0];
+        for (int data : numbers) {
+            if (data > max) {
+                max = data;
             }
         }
         return max;
