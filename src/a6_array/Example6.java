@@ -14,6 +14,11 @@ public class Example6 {
     public static String reverseString(String str) {
         // 힌트! String을 charArray로 변형하여 거꾸로 담은 다음
         // 그걸 다시 String 으로 변환하여 반환하세요.
-        return null;
+        char[] chars = str.toCharArray();
+        char[] reflect = new char[chars.length];
+        for (int i= 0; i < chars.length; i++) {
+            reflect[i] = chars[chars.length -1 -i];
+        }
+        return new String(reflect);
     }
 }
