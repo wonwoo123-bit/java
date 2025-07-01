@@ -10,6 +10,7 @@ public class Example6 {
         System.out.println("문자열을 입력해주세요.");
         String str = scanner.nextLine();
         System.out.println(reverseString(str));
+//        System.out.println(reverseString1(str));
     }
     public static String reverseString(String str) {
         // 힌트! String을 charArray로 변형하여 거꾸로 담은 다음
@@ -21,4 +22,7 @@ public class Example6 {
         }
         return new String(reflect);
     }
+
+
+
 }

@@ -12,7 +12,7 @@ import java.util.Vector;
 // 1. 동적크기 : 필요할때마다 노드를 연속된 위치가 아니더라도 추가 가능.
 //              리스트를 재생성할 필요가 없음
 // 2. 빠른 삽입/삭제 : 리스트 중간에서도 참조값만 수정하여 삽입/삭제 가능
-// 3. 느린 접근(엑세스) : 임의의 위치를 접근하려면 반드시 순차적으로 탐색해야함
+// 3. 느린 접근(엑세스) : 임의의 위치를 접근하려면 반드시 순차적으로 탐색해야함 (검색이 느리다. < 데이터가 다른 메모리로 가지기 때문)
 // 4. 메모리 오버헤드 : 각 노드에 메모리참조값을 저장하기 위한 추가 메모리 필요
 public class LinkedList1 {
     public static void main(String[] args) {
@@ -38,6 +38,7 @@ public class LinkedList1 {
         linkedList3.add(2); // [1,2]
         linkedList3.addAll(1, linkedList3);
         System.out.println(linkedList3); // [1,1,2,2]
+        System.out.println();
         // #5. set 수정
         linkedList3.set(1,5);
         linkedList3.set(3,6);
