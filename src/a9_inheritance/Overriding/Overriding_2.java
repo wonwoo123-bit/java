@@ -9,8 +9,11 @@ class Animal {
 class Bird extends Animal {
     @Override // 어노테이션
     void cry() {
-        super.cry(); // ...
-        //System.out.println("짹짹");
+//        super.cry(); // ...
+        System.out.println("짹짹");
+    }
+    void superCry(){
+        super.cry();
     }
     // 어노테이션은 코드에 추가적인 정보를 제공하기 위한 메타데이터
     // 메타데이터는 주로 코드의 의미를 명확하게 하고 컴파일러에게 지시를 내리거나
@@ -50,8 +53,14 @@ public class Overriding_2 {
         animal2.cry();
         animal3.cry();
         System.out.println();
+//        부모(animal)의 cry를 호출하고자 한다면
+        Bird animal4 = (Bird) animal1;
+        animal4.superCry(); // ...
 
         // 배열생성
+        // 새, 고양이, 개 클래스가 상속관계가 아니라면 배열에 담을때 모두 각자 타입의
+        // 배열에 담아야 하므로 배열 3개가 필요함
+        // 하지만 상속관계에 있다면 부모인 Animal 클래스로 업캐스팅이 가능하므로
         // 부모클래스로 배열의 타입을 정의하면 자식클래스들 모두를 배열화할 수 있음
         Animal[] animals = {animal, bird, cat, dog, animal1, animal2};
         printCry(animals);
