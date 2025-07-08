@@ -1,11 +1,26 @@
 package project1;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+
+class FireMonster extends Monster{
+    private int fireSkillDamage;
+    public FireMonster(String name, int hp, int attack, int defense, int fireSkillDamage){
+        super(name, hp, attack, defense);
+        this.fireSkillDamage = fireSkillDamage;
+    }
+
+    @Override
+    public void info() {
+        super.info();
+        System.out.println("불 스킬 공격" + fireSkillDamage);
+    }
+}
 public class GameManager1 {
     public static void main(String[] args) {
-        ArrayList<Monster>monsters = new ArrayList<>();
+        List<Monster> monsters = new ArrayList<>();
         monsters.add(new Monster("슬라임",30,8,5));
         monsters.add(new Monster("고블린",50,12,4));
         monsters.add(new Monster("오크",80,15,7));
@@ -16,6 +31,9 @@ public class GameManager1 {
         monsters.add(new Monster("리치",130,35,12));
         monsters.add(new Monster("키메라",200,30,20));
         monsters.add(new Monster("드래곤",300,40,30));
+        monsters.add(new FireMonster("이프리트",140,22,18,35));
+        monsters.add(new FireMonster("헬 하운드",90,28,10,25));
+        monsters.add(new FireMonster("파이어 골렘",180,25,22,20));
 
 
         for (int i = 0; i < monsters.size(); i++){
@@ -24,10 +42,10 @@ public class GameManager1 {
         }
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("0~9번중 첫번째 몬스터를 고르시오");
+        System.out.println("0~12번중 첫번째 몬스터를 고르시오");
         int first = scanner.nextInt();
 
-        System.out.println("0~9번중 두번째 몬스터를 고르시오");
+        System.out.println("0~12번중 두번째 몬스터를 고르시오");
         int second = scanner.nextInt();
 
         if (first==second || first<0 || second<0 || first >= monsters.size() || second >= monsters.size()){
