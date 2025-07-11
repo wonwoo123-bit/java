@@ -1,12 +1,12 @@
 package project1;
 
-public class Monster {
+public abstract class Monster {
     private String name;
     private int hp;
     private int maxHp;
     private int attack;
     private int defense;
-
+    public abstract int attack(Monster target);
 
     public Monster(String name, int hp, int attack, int defense) {
         this.name = name;
