@@ -9,11 +9,6 @@ import java.util.Scanner;
         class FireMonster extends Monster {
             private int fireSkillDamage;
 
-            @Override
-            public int attack(Monster target) {
-                return 0;
-            }
-
             public FireMonster(String name, int hp, int attack, int defense, int fireSkillDamage) {
                 super(name, hp, attack, defense);
                 this.fireSkillDamage = fireSkillDamage;
@@ -24,6 +19,65 @@ import java.util.Scanner;
             public void info() {
                 super.info();
                 System.out.println("불 스킬 공격" + fireSkillDamage);
+            }
+//            스킬 데미지는 후속 추가타의 개념임
+//            전투시 공격 이후 발동하면 추가로 때려야함
+//            기존 while문 가져와서 공격 이후에 35% 확률 구하는 코드 집어넣어서
+//            참 일경우 한대 더 때리기
+//            거짓이면 스킬발동 실패 문구 넣어서 넘기기
+            @Override
+            public int attack(Monster target) {
+                while(this.getHp() > 0 && target.getHp() > 0){
+                    int damage = this.getAttack() - target.getDefense();
+                    if(damage <= 0) damage=0;
+
+                    int skilldamage =0;
+                    if (Math.random() < 0.35) {
+
+                        skilldamage = this.fireSkillDamage;
+                        if (fireSkillDamage < 0) fireSkillDamage = 0;
+                        System.out.println("스킬발동 " + skilldamage + " 의 추가피해!");
+                    } else {
+                        System.out.println("스킬발동 실패");
+                    }
+
+                    int newHp = target.getHp()-damage- skilldamage;
+                    target.setHp(newHp > 0 ? newHp : 0);
+
+                    System.out.println(this.getName()+"이(가) " + target.getName()+"을 공격");
+                    System.out.println(target.getName() + "의 남은 체력" + target.getHp());
+                    System.out.println();
+
+
+                    if (target.getHp() <= 0 ) break;
+
+                    int damage1 = target.getAttack() - this.getDefense();{
+                        if (damage1 <= 0) damage1 = 0;
+                    }
+                    int skillDamage1 = 0;
+                    if (target instanceof FireMonster && Math.random() < 0.35) {
+                        skillDamage1 = ((FireMonster)target).fireSkillDamage;
+                        System.out.println("스킬 발동! " + skillDamage1 + "의 추가 피해!");
+                    } else {
+                        System.out.println("스킬 발동 실패");
+                    }
+
+
+                    this.setHp(this.getHp()-damage1 - skillDamage1);
+                    if (this.getHp() < 0) this.setHp(0);
+                    System.out.println(target.getName()+"이(가) " + this.getName()+"을 공격");
+                    System.out.println(this.getName() + "의 남은 체력" + this.getHp());
+                    System.out.println();
+                    if (this.getHp() < 0 ) break;
+
+                    try {
+                        Thread.sleep(1000); // 1000ms = 1초
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+                return 0;
             }
         }
 
