@@ -19,6 +19,7 @@ public class NormalMonster extends Monster {
 
         while (this.getHp() > 0 && target.getHp() > 0) {
             int damage;
+//            삼항연산자로 변경?
             if (Math.random() < 0.2) {
                 damage = this.getAttack() * 2 - target.getDefense();
                 if (damage < 0) damage = 0;
@@ -35,6 +36,7 @@ public class NormalMonster extends Monster {
             if (target.getHp() <= 0) break;
 
             int damage1;
+//            삼항연산자?
             if (Math.random() < 0.2) {
                 damage1 = target.getAttack() * 2 - this.getDefense();
                 if (damage1 < 0) damage1 = 0;

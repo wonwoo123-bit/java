@@ -27,10 +27,11 @@ import java.util.Scanner;
 //            거짓이면 스킬발동 실패 문구 넣어서 넘기기
             @Override
             public int attack(Monster target) {
+                // 지금 만들어둔 메서드를 굳이 리턴으로 해야 하는가...? 리턴이 필요 없어 보이는데 일단 Monster 따라 어쩔수 없이 리턴으로
                 while(this.getHp() > 0 && target.getHp() > 0){
                     int damage = this.getAttack() - target.getDefense();
                     if(damage <= 0) damage=0;
-
+//                  삼항연산자로 변경?
                     int skilldamage =0;
                     if (Math.random() < 0.35) {
 
