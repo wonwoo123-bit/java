@@ -6,7 +6,7 @@ public abstract class Monster {
     private int maxHp;
     private int attack;
     private int defense;
-    public abstract int attack(project1.Monster target);
+    public abstract int attack(Monster target);
 
     public Monster(String name, int hp, int attack, int defense) {
         this.name = name;
