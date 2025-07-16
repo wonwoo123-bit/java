@@ -39,14 +39,14 @@ public class GameManager {
         monsters.add(new NormalMonster("고블린", 50, 12, 4));
         monsters.add(new NormalMonster("오크", 80, 15, 7));
         monsters.add(new NormalMonster("스켈레톤", 60, 14, 10));
-        monsters.add(new NormalMonster("트롤", 120, 18, 6));
+        monsters.add(new Troll("트롤", 120, 18, 6));
         monsters.add(new NormalMonster("골렘", 100, 20, 25));
         monsters.add(new NormalMonster("와이번", 150, 25, 15));
         monsters.add(new NormalMonster("리치", 130, 35, 12));
         monsters.add(new NormalMonster("키메라", 200, 30, 20));
         monsters.add(new NormalMonster("드래곤", 300, 40, 30));
         monsters.add(new FireMonster("이프리트", 140, 22, 18, 35));
-        monsters.add(new FireMonster("헬 하운드", 90, 28, 10, 25));
+        monsters.add(new Hellhound("헬 하운드", 90, 28, 10, 25));
         monsters.add(new FireMonster("파이어 골렘", 180, 25, 22, 20));
 
         for (int i=0; i < monsters.size(); i++){
@@ -76,12 +76,17 @@ public class GameManager {
             int newHp = monster2.getHp() - damage;
             monster2.setHp(Math.max(newHp,0));
 
-            System.out.println(monster1.getName() + "이" + monster2.getName() + "을 공격!");
+
+
+            System.out.println(monster1.getName() + "이 " + monster2.getName() + "을 공격!");
             System.out.println("피해량: "+ damage);
             System.out.println(monster2.getName() + "의 남은 체력: " + monster2.getHp());
 
-            System.out.println();
 
+            if (monster1 instanceof Healable && Math.random() < 0.25){
+                ((Healable) monster1).heal();
+            }
+            System.out.println();
             if (monster2.getHp() < 0){
                 System.out.println(monster2.getName() + "이 쓰러졌습니다.");
                 break;
@@ -96,8 +101,11 @@ public class GameManager {
             System.out.println("피해량: " + damage1);
             System.out.println(monster1.getName() + "의 남은 체력: " + monster1.getHp());
 
-            System.out.println();
 
+            if (monster2 instanceof Healable && Math.random() < 0.25){
+                ((Healable) monster2).heal();
+            }
+            System.out.println();
             if (monster1.getHp() <0){
                 System.out.println(monster1.getName() + "이 쓰러졌습니다.");
                 break;
