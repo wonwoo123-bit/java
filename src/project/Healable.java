@@ -12,9 +12,13 @@ class Troll extends NormalMonster implements Healable{
 
     @Override
     public void heal() {
-        int healHp = this.getHp() + this.getMaxHp() / 10 ;
+        int healing = this.getMaxHp() / 10;
+        int healHp = this.getHp() + healing ;
+        if (healHp > this.getMaxHp()){
+            healHp = this.getMaxHp();
+        }
         setHp(healHp);
-        System.out.println("체력회복 스킬로 " + healHp);
+        System.out.println("체력회복 스킬로 " + healing + " 만큼 회복");
     }
 }
 
@@ -25,9 +29,14 @@ class Hellhound extends FireMonster implements Healable{
 
     @Override
     public void heal() {
-        int healHp = this.getHp() + this.getMaxHp() / 20;
+        int healing = this.getMaxHp() / 20;
+        int healHp = this.getHp() + healing;
+        if (healHp > this.getMaxHp()){
+            healHp = this.getMaxHp();
+        }
+
         setHp(healHp);
-        System.out.println("체력회복 스킬로 " + healHp);
+        System.out.println("체력회복 스킬로 " + healing + " 만큼 회복");
     }
 
 
